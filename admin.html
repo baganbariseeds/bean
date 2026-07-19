@@ -26,41 +26,37 @@
         </div>
     </div>
 
-<script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwbw2euz_kR7a554zK1_0Nj6Qbv4tDqLQGWgA0dcTXv8E6bdebHAjef9pUXzf241OVpDw/exec';
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwbw2euz_kR7a554zK1_0Nj6Qbv4tDqLQGWgA0dcTXv8E6bdebHAjef9pUXzf241OVpDw/exec';
 
-    async function send(idx) {
-        if(!confirm("আপনি কি নিশ্চিত?")) return;
-        
-        // বাটন লোডিং স্টেট
-        const btn = event.target;
-        const originalText = btn.innerText;
-        btn.innerText = "আপডেট হচ্ছে...";
-        btn.disabled = true;
+        async function load() {
+            const res = await fetch(SCRIPT_URL);
+            const data = await res.json();
+            const body = document.getElementById('tableBody');
+            body.innerHTML = "";
 
-        try {
-            await fetch(SCRIPT_URL, { 
-                method: 'POST', 
-                mode: 'no-cors', 
-                body: JSON.stringify({
-                    action: "update", 
-                    rowIndex: idx // এটি শিটের সঠিক রো নাম্বার পাঠাবে
-                }) 
+            data.reverse().forEach(o => {
+                const isSent = o.status === "পাঠানো হয়েছে";
+                body.innerHTML += `
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-4"><b>${o.name}</b><br><span class="text-blue-500 text-sm">${o.district}</span></td>
+                        <td class="p-4 text-sm">${o.address}<br><b>${o.phone}</b></td>
+                        <td class="p-4">প্যাকেট: ${o.quantity}</td>
+                        <td class="p-4">৳${o.deliveryFee}</td>
+                        <td class="p-4 font-bold text-green-700">৳${o.totalPrice}</td>
+                        <td class="p-4"><span class="px-2 py-1 rounded text-xs ${isSent ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'}">${o.status}</span></td>
+                        <td class="p-4 text-center">
+                            ${!isSent ? `<button onclick="send(${o.rowIndex})" class="bg-green-600 text-white px-3 py-1 rounded">পাঠানো হয়েছে?</button>` : '✅'}
+                        </td>
+                    </tr>`;
             });
-            
-            // সাময়িক বিরতি দিয়ে টেবিল রিফ্রেশ
-            setTimeout(() => {
-                load();
-                alert("অর্ডার স্ট্যাটাস আপডেট করা হয়েছে।");
-            }, 1500);
-
-        } catch (error) {
-            alert("সমস্যা হয়েছে!");
-            btn.innerText = originalText;
-            btn.disabled = false;
         }
-    }
-    // load() ফাংশন আগের মতোই থাকবে।
-</script>
+
+        async function send(idx) {
+            await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({action: "update", rowIndex: idx}) });
+            setTimeout(load, 2000);
+        }
+        load();
+    </script>
 </body>
 </html>
