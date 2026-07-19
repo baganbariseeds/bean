@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Bagan Bari Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-5xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">অর্ডার লিস্ট</h1>
+        <button onclick="fetchOrders()" class="mb-4 bg-blue-600 text-white px-4 py-2 rounded">রিফ্রেশ করুন</button>
+        
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="p-3">তারিখ</th>
+                        <th class="p-3">নাম ও ফোন</th>
+                        <th class="p-3">ঠিকানা</th>
+                        <th class="p-3">পরিমাণ</th>
+                    </tr>
+                </thead>
+                <tbody id="adminTableBody">
+                    <!-- Data will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = 'আপনার_গুগল_অ্যাপস_স্ক্রিপ্ট_URL_এখানে_দিন';
+
+        async function fetchOrders() {
+            const response = await fetch(SCRIPT_URL);
+            const data = await response.json();
+            const table = document.getElementById('adminTableBody');
+            table.innerHTML = "";
+            
+            data.reverse().forEach(row => {
+                table.innerHTML += `
+                    <tr class="border-b">
+                        <td class="p-3 text-xs">${new Date(row[0]).toLocaleDateString('bn-BD')}</td>
+                        <td class="p-3 font-bold">${row[1]}<br><span class="text-blue-600">${row[2]}</span></td>
+                        <td class="p-3 text-sm">${row[3]}</td>
+                        <td class="p-3">${row[4]} টি</td>
+                    </tr>
+                `;
+            });
+        }
+        fetchOrders();
+    </script>
+</body>
+</html>
