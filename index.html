@@ -3,102 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bagan Bari Seeds</title>
+    <title>Bagan Bari Seeds - Premium Quality</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
-        body { font-family: 'Hind Siliguri', sans-serif; }
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: #f3f7f3; }
+        .hero-gradient { background: linear-gradient(135deg, #166534 0%, #15803d 100%); }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="text-gray-800">
 
-    <header class="bg-green-600 text-white py-4 text-center sticky top-0 z-50 shadow-md">
-        <h1 class="text-2xl font-bold">Bagan Bari Seeds</h1>
+    <header class="hero-gradient text-white py-6 text-center shadow-xl sticky top-0 z-50">
+        <h1 class="text-3xl font-bold tracking-tight">BAGAN BARI SEEDS</h1>
     </header>
 
-    <!-- Main Hero Image -->
-    <div class="max-w-3xl mx-auto p-4">
-        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800" class="w-full rounded-2xl shadow-lg mb-6">
+    <main class="max-w-4xl mx-auto px-4 py-8">
         
-        <!-- Slider -->
-        <div class="swiper mySwiper mb-6">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1592150621344-824545996a67?w=400" class="rounded-xl"></div>
-                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400" class="rounded-xl"></div>
-                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e17?w=400" class="rounded-xl"></div>
+        <!-- Main Product Image -->
+        <div class="mb-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=1000" class="w-full h-80 md:h-[450px] object-cover">
+        </div>
+
+        <!-- Slider Section -->
+        <div class="mb-12">
+            <h2 class="text-xl font-bold text-green-900 mb-4 px-2 border-l-4 border-green-600">আমাদের সংগ্রহের আরও বীজ</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1592150621344-824545996a67?w=400" class="rounded-2xl border-2 border-white shadow"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400" class="rounded-2xl border-2 border-white shadow"></div>
+                    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e17?w=400" class="rounded-2xl border-2 border-white shadow"></div>
+                </div>
             </div>
         </div>
 
-        <!-- Product Details -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-green-100 mb-6">
-            <h2 class="text-2xl font-bold text-green-700">প্রিমিয়াম সবজি বীজ কম্বো</h2>
-            <p class="text-gray-600 mt-2">আমাদের স্পেশাল প্যাকেজে পাচ্ছেন ১০ ধরণের উন্নত জাতের বীজ যা আপনার ছাদ বাগানের জন্য সেরা।</p>
-            <div class="text-xl font-bold text-orange-600 mt-3">মূল্য: ৪৯৯ টাকা</div>
+        <!-- Price Details -->
+        <div class="bg-white p-8 rounded-[2rem] shadow-sm mb-12 border border-green-100">
+            <h2 class="text-3xl font-bold text-green-800 mb-4">প্রিমিয়াম হাইব্রিড বীজ প্যাকেজ</h2>
+            <p class="text-gray-600 mb-6 italic">প্যাকেজে থাকবে ১০টি সেরা জাতের সবজি বীজ।</p>
+            <div class="text-2xl font-bold text-gray-700">প্রতি প্যাকেট: <span class="text-green-700">৳৪৫০</span></div>
+            <p class="text-sm text-orange-600 font-bold mt-2 font-semibold">* ডেলিভারি চার্জ: ঢাকা ৬০ টাকা | ঢাকার বাইরে ১২০ টাকা</p>
         </div>
 
-        <!-- Order Form -->
-        <form id="orderForm" class="bg-white p-6 rounded-2xl shadow-lg border-2 border-green-500">
-            <h3 class="text-xl font-bold mb-4 text-center text-green-800">অর্ডার করতে নিচের তথ্য দিন</h3>
-            <div class="space-y-4">
-                <input type="text" id="name" placeholder="আপনার নাম" required class="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-green-500">
-                <input type="tel" id="phone" placeholder="মোবাইল নাম্বার" required class="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-green-500">
-                <textarea id="address" placeholder="পুরো ঠিকানা" required class="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-green-500"></textarea>
-                
-                <!-- Universal Quantity Picker -->
-                <div class="flex items-center justify-between bg-gray-100 p-3 rounded-lg">
-                    <span class="font-bold">পরিমাণ:</span>
-                    <div class="flex items-center space-x-4">
-                        <button type="button" onclick="changeQty(-1)" class="bg-red-500 text-white px-3 py-1 rounded-full text-xl font-bold">-</button>
-                        <span id="qtyDisplay" class="text-xl font-bold">1</span>
-                        <button type="button" onclick="changeQty(1)" class="bg-green-500 text-white px-3 py-1 rounded-full text-xl font-bold">+</button>
+        <!-- ORDER FORM -->
+        <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl border-t-8 border-green-600">
+            <h3 class="text-2xl font-bold text-center mb-8">অর্ডার কনফার্ম করতে ফর্মটি পূরণ করুন</h3>
+            
+            <form id="orderForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-bold mb-2 text-gray-700">আপনার নাম</label>
+                        <input type="text" id="name" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-green-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block font-bold mb-2 text-gray-700">মোবাইল নাম্বার</label>
+                        <input type="tel" id="phone" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-green-500 outline-none">
                     </div>
                 </div>
 
-                <button type="submit" id="submitBtn" class="w-full bg-green-600 text-white font-bold py-4 rounded-xl text-lg hover:bg-green-700 transition transform active:scale-95">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-bold mb-2 text-gray-700">আপনার জেলা</label>
+                        <select id="district" required onchange="calculateTotal()" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-green-500 outline-none">
+                            <option value="">জেলা নির্বাচন করুন</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold mb-2 text-gray-700">পরিমাণ (প্যাকেট)</label>
+                        <div class="flex items-center h-[58px] bg-gray-100 rounded-2xl px-4 justify-between border border-gray-200">
+                            <button type="button" onclick="changeQty(-1)" class="w-10 h-10 bg-white rounded-xl shadow text-xl font-bold text-red-500">-</button>
+                            <span id="qtyDisplay" class="text-xl font-bold">1</span>
+                            <button type="button" onclick="changeQty(1)" class="w-10 h-10 bg-white rounded-xl shadow text-xl font-bold text-green-600">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold mb-2 text-gray-700">পুরো ঠিকানা</label>
+                    <textarea id="address" required placeholder="গ্রাম/মহল্লা, থানা উল্লেখ করুন" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+                </div>
+
+                <!-- Calculation Display -->
+                <div class="bg-green-50 p-6 rounded-3xl border border-green-200 space-y-2">
+                    <div class="flex justify-between text-gray-600">
+                        <span>পণ্যের দাম:</span>
+                        <span id="productPriceText">৳৪৫০</span>
+                    </div>
+                    <div class="flex justify-between text-gray-600">
+                        <span>ডেলিভারি চার্জ:</span>
+                        <span id="deliveryChargeText">৳০</span>
+                    </div>
+                    <hr class="border-green-200">
+                    <div class="flex justify-between text-2xl font-black text-green-800">
+                        <span>সর্বমোট:</span>
+                        <span id="totalPriceDisplay">৳৪৫০</span>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-5 rounded-2xl text-xl shadow-lg transition-all active:scale-95">
                     অর্ডার কনফার্ম করুন
                 </button>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-          let quantity = 1;
+        const UNIT_PRICE = 450;
+        const DELIVERY_IN_DHAKA = 60;
+        const DELIVERY_OUTSIDE_DHAKA = 120;
+        let quantity = 1;
+        let deliveryFee = 0;
+
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyExw2pj7YvFnnEFUaHLPf3mlkgFICpVkow-6hQcXQN5LgGG8CgAJq1SuAoQhNTznzwXw/exec';
+
+        const districts = ["Dhaka", "Faridpur", "Gazipur", "Gopalganj", "Kishoreganj", "Madaripur", "Manikganj", "Munshiganj", "Narayanganj", "Narsingdi", "Rajbari", "Shariatpur", "Tangail", "Bagerhat", "Chuadanga", "Jessore", "Jhenaidah", "Khulna", "Kushtia", "Magura", "Meherpur", "Narail", "Satkhira", "Barguna", "Barisal", "Bhola", "Jhalokati", "Patuakhali", "Pirojpur", "Brahmanbaria", "Chandpur", "Chittagong", "Comilla", "Cox's Bazar", "Feni", "Khagrachhari", "Lakshmipur", "Noakhali", "Rangamati", "Habiganj", "Moulvibazar", "Sunamganj", "Sylhet", "Bogra", "Joypurhat", "Naogaon", "Natore", "Nawabganj", "Pabna", "Rajshahi", "Sirajganj", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Rangpur", "Thakurgaon", "Jamalpur", "Mymensingh", "Netrokona", "Sherpur"];
+        
+        const districtSelect = document.getElementById('district');
+        districts.sort().forEach(d => {
+            let opt = document.createElement('option');
+            opt.value = d; opt.innerText = d;
+            districtSelect.appendChild(opt);
+        });
+
         function changeQty(val) {
             quantity = Math.max(1, quantity + val);
             document.getElementById('qtyDisplay').innerText = quantity;
+            calculateTotal();
         }
 
-        // Swiper Init
-        new Swiper(".mySwiper", { slidesPerView: 2, spaceBetween: 10, loop: true });
+        function calculateTotal() {
+            const selectedDistrict = districtSelect.value;
+            if (!selectedDistrict) {
+                deliveryFee = 0;
+            } else {
+                deliveryFee = (selectedDistrict === "Dhaka") ? DELIVERY_IN_DHAKA : DELIVERY_OUTSIDE_DHAKA;
+            }
+            
+            const productTotal = quantity * UNIT_PRICE;
+            const grandTotal = productTotal + deliveryFee;
 
-        // Submit to Google Sheets
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyuFmZQUJTvCv3V6C067bAE25Qc9hlz97oaJxBvczuJT3LVejptuPuPrv1zTmbKUgY-Jw/exec';
-        
+            document.getElementById('productPriceText').innerText = '৳' + productTotal;
+            document.getElementById('deliveryChargeText').innerText = '৳' + deliveryFee;
+            document.getElementById('totalPriceDisplay').innerText = '৳' + grandTotal;
+        }
+
+        new Swiper(".mySwiper", { slidesPerView: 2, spaceBetween: 15 });
+
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            if(!districtSelect.value) return alert("দয়া করে জেলা সিলেক্ট করুন");
+            
             const btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
+            btn.disabled = true; btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
 
             const data = {
-                action: "add", // নতুন অর্ডার অ্যাকশন
+                action: "add",
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
+                district: districtSelect.value,
                 address: document.getElementById('address').value,
-                quantity: quantity
+                quantity: quantity,
+                deliveryFee: deliveryFee,
+                totalPrice: (quantity * UNIT_PRICE) + deliveryFee
             };
 
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             }).then(() => {
-                alert("ধন্যবাদ! আপনার অর্ডারটি সফল হয়েছে।");
+                alert("সাফল্য! আপনার অর্ডারটি গৃহীত হয়েছে।");
                 location.reload();
-            }).catch(err => alert("ত্রুটি হয়েছে!"));
+            }).catch(() => {
+                alert("ত্রুটি হয়েছে!");
+                btn.disabled = false;
+            });
         });
     </script>
 </body>
