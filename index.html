@@ -64,9 +64,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Quantity Logic
-      // ... আগের index.html এর বাকি কোড ঠিক থাকবে, শুধু স্ক্রিপ্ট অংশটি নিচের মতো হবে ...
+          let quantity = 1;
+        function changeQty(val) {
+            quantity = Math.max(1, quantity + val);
+            document.getElementById('qtyDisplay').innerText = quantity;
+        }
 
+        // Swiper Init
+        new Swiper(".mySwiper", { slidesPerView: 2, spaceBetween: 10, loop: true });
+
+        // Submit to Google Sheets
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyuFmZQUJTvCv3V6C067bAE25Qc9hlz97oaJxBvczuJT3LVejptuPuPrv1zTmbKUgY-Jw/exec';
+        
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
