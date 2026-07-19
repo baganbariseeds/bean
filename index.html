@@ -151,35 +151,34 @@
         new Swiper(".mySwiper", { slidesPerView: 2, spaceBetween: 15 });
 
         document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            if(!districtSelect.value) return alert("দয়া করে জেলা সিলেক্ট করুন");
-            
-            const btn = document.getElementById('submitBtn');
-            btn.disabled = true; btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true;
+        btn.innerText = "অর্ডার প্রসেস হচ্ছে...";
 
-            const data = {
-                action: "add",
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                district: districtSelect.value,
-                address: document.getElementById('address').value,
-                quantity: quantity,
-                deliveryFee: deliveryFee,
-                totalPrice: (quantity * UNIT_PRICE) + deliveryFee
-            };
+        const data = {
+            action: "add",
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            district: document.getElementById('district').value,
+            address: document.getElementById('address').value,
+            quantity: quantity,
+            deliveryFee: deliveryFee,
+            totalPrice: (quantity * UNIT_PRICE) + deliveryFee
+        };
 
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(data)
-            }).then(() => {
-                alert("সাফল্য! আপনার অর্ডারটি গৃহীত হয়েছে।");
-                location.reload();
-            }).catch(() => {
-                alert("ত্রুটি হয়েছে!");
-                btn.disabled = false;
-            });
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(data)
+        }).then(() => {
+            // অর্ডার সফল হলে ধন্যবাদ পেজে নিয়ে যাবে
+            window.location.href = 'thanks.html';
+        }).catch(() => {
+            alert("দুঃখিত, আবার চেষ্টা করুন।");
+            btn.disabled = false;
         });
+    });
     </script>
 </body>
 </html>
