@@ -88,16 +88,16 @@
                 <div class="bg-green-50 p-6 rounded-3xl border border-green-200 space-y-2">
                     <div class="flex justify-between text-gray-600">
                         <span>পণ্যের দাম:</span>
-                        <span id="productPriceText">৳৪৫০</span>
+                        <span id="productPriceText">৳২২০</span>
                     </div>
                     <div class="flex justify-between text-gray-600">
                         <span>ডেলিভারি চার্জ:</span>
-                        <span id="deliveryChargeText">৳০</span>
+                        <span id="deliveryChargeText">ফ্রি</span>
                     </div>
                     <hr class="border-green-200">
                     <div class="flex justify-between text-2xl font-black text-green-800">
                         <span>সর্বমোট:</span>
-                        <span id="totalPriceDisplay">৳৪৫০</span>
+                        <span id="totalPriceDisplay">৳২২০</span>
                     </div>
                 </div>
 
@@ -110,9 +110,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const UNIT_PRICE = 450;
-        const DELIVERY_IN_DHAKA = 60;
-        const DELIVERY_OUTSIDE_DHAKA = 120;
+        const UNIT_PRICE = 220;
+        const DELIVERY_IN_DHAKA = 0;
+        const DELIVERY_OUTSIDE_DHAKA = 0;
         let quantity = 1;
         let deliveryFee = 0;
 
@@ -145,7 +145,7 @@
             const grandTotal = productTotal + deliveryFee;
 
             document.getElementById('productPriceText').innerText = '৳' + productTotal;
-            document.getElementById('deliveryChargeText').innerText = '৳' + deliveryFee;
+            document.getElementById('deliveryChargeText').innerText = 'ফ্রি';
             document.getElementById('totalPriceDisplay').innerText = '৳' + grandTotal;
         }
 
